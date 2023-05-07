@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="ticTacTakeViewModel"
+            type="com.hhalwan.tictactoe.TicTacTakeViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".TicTacTakeActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayoutTop"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/rectangleVert1"
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/rectangleVert2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_dark" />
+
+            <ImageView
+                android:id="@+id/rectangleHorz1"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/rectangleHorz2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_dark" />
+
+            <ImageView
+                android:id="@+id/rectangleHorz2"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rectangleHorz1"
+                app:srcCompat="@android:drawable/screen_background_dark" />
+
+            <ImageView
+                android:id="@+id/rectangleVert2"
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rectangleVert1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_dark" />
+
+            <ImageButton
+                android:id="@+id/btnTopLeft"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toTopOf="@+id/rectangleHorz1"
+                app:layout_constraintEnd_toStartOf="@+id/rectangleVert1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/button_o_size1_smaller" />
+
+            <ImageButton
+                android:id="@+id/btnTopMid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toTopOf="@+id/rectangleHorz1"
+                app:layout_constraintEnd_toStartOf="@+id/rectangleVert2"
+                app:layout_constraintStart_toEndOf="@+id/rectangleVert1"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/button_o_size2_smaller" />
+
+            <ImageButton
+                android:id="@+id/btnTopRight"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toTopOf="@+id/rectangleHorz1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rectangleVert2"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/button_o_size3_smaller" />
+
+            <ImageButton
+                android:id="@+id/btnMidLeft"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toTopOf="@+id/rectangleHorz2"
+                app:layout_constraintEnd_toStartOf="@+id/rectangleVert1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rectangleHorz1"
+                tools:background="@drawable/button_o_size4_smaller" />
+
+            <ImageButton
+                android:id="@+id/btnMid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toTopOf="@+id/rectangleHorz2"
+                app:layout_constraintEnd_toStartOf="@+id/rectangleVert2"
+                app:layout_constraintStart_toEndOf="@+id/rectangleVert1"
+                app:layout_constraintTop_toBottomOf="@+id/rectangleHorz1"
+                tools:background="@drawable/button_o_size5_smaller" />
+
+            <ImageButton
+                android:id="@+id/btnMidRight"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toTopOf="@+id/rectangleHorz2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rectangleVert2"
+                app:layout_constraintTop_toBottomOf="@+id/rectangleHorz1"
+                tools:background="@drawable/button_o_size6_smaller" />
+
+            <ImageButton
+                android:id="@+id/btnBtmLeft"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/rectangleVert1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rectangleHorz2" />
+
+            <ImageButton
+                android:id="@+id/btnBtmMid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/rectangleVert2"
+                app:layout_constraintStart_toEndOf="@+id/rectangleVert1"
+                app:layout_constraintTop_toBottomOf="@+id/rectangleHorz2" />
+
+            <ImageButton
+                android:id="@+id/btnBtmRight"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rectangleVert2"
+                app:layout_constraintTop_toBottomOf="@+id/rectangleHorz2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/turnText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/x_s_turn"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/restart_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/play_again"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/winnerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/turnText" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutTop"
+            android:layout_width="88dp"
+            android:layout_height="303dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/x_piece1"
+                android:layout_width="88dp"
+                android:layout_height="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/x_piece2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/button_x_size1_smaller" />
+
+            <ImageButton
+                android:id="@+id/x_piece2"
+                android:layout_width="88dp"
+                android:layout_height="27.2dp"
+                app:layout_constraintBottom_toTopOf="@+id/x_piece3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/x_piece1"
+                tools:background="@drawable/button_x_size2_smaller" />
+
+            <ImageButton
+                android:id="@+id/x_piece3"
+                android:layout_width="88dp"
+                android:layout_height="42.4dp"
+                app:layout_constraintBottom_toTopOf="@+id/x_piece4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/x_piece2"
+                tools:background="@drawable/button_x_size3_smaller" />
+
+            <ImageButton
+                android:id="@+id/x_piece4"
+                android:layout_width="88dp"
+                android:layout_height="57.6dp"
+                app:layout_constraintBottom_toTopOf="@+id/x_piece5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/x_piece3"
+                tools:background="@drawable/button_x_size4_smaller" />
+
+            <ImageButton
+                android:id="@+id/x_piece5"
+                android:layout_width="88dp"
+                android:layout_height="72.8dp"
+                app:layout_constraintBottom_toTopOf="@+id/x_piece6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/x_piece4"
+                tools:background="@drawable/button_x_size5_smaller" />
+
+            <ImageButton
+                android:id="@+id/x_piece6"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/x_piece5"
+                tools:background="@drawable/button_x_size6_smaller" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutBtm"
+            android:layout_width="88dp"
+            android:layout_height="303dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/o_piece1"
+                android:layout_width="88dp"
+                android:layout_height="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/o_piece2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/button_o_size1_smaller" />
+
+            <ImageButton
+                android:id="@+id/o_piece2"
+                android:layout_width="88dp"
+                android:layout_height="27.2dp"
+                app:layout_constraintBottom_toTopOf="@+id/o_piece3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/o_piece1"
+                tools:background="@drawable/button_o_size2_smaller" />
+
+            <ImageButton
+                android:id="@+id/o_piece3"
+                android:layout_width="88dp"
+                android:layout_height="42.4dp"
+                app:layout_constraintBottom_toTopOf="@+id/o_piece4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/o_piece2"
+                tools:background="@drawable/button_o_size3_smaller" />
+
+            <ImageButton
+                android:id="@+id/o_piece4"
+                android:layout_width="88dp"
+                android:layout_height="57.6dp"
+                app:layout_constraintBottom_toTopOf="@+id/o_piece5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/o_piece3"
+                tools:background="@drawable/button_o_size4_smaller" />
+
+            <ImageButton
+                android:id="@+id/o_piece5"
+                android:layout_width="88dp"
+                android:layout_height="72.8dp"
+                app:layout_constraintBottom_toTopOf="@+id/o_piece6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/o_piece4"
+                tools:background="@drawable/button_o_size5_smaller" />
+
+            <ImageButton
+                android:id="@+id/o_piece6"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/o_piece5"
+                tools:background="@drawable/button_o_size6_smaller" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Tic Tac Take</string>
+    <string name="x_s_turn">X\'s turn</string>
+    <string name="o_s_turn">O\'s turn</string>
+    <string name="play_again">Play Again</string>
+    <string name="x_wins">X wins!</string>
+    <string name="o_wins">O wins!</string>
+    <string name="tie">Tie!</string>
+    <string name="oranges_turn">Orange\'s turn. Select your piece.</string>
+    <string name="blues_turn">Blue\'s turn. Select your piece.</string>
+    <string name="oranges_turn_2">Orange\'s turn. Select a square to place your piece in.</string>
+    <string name="blues_turn_2">Blue\'s turn. Select a square to place your piece in.</string>
+    <string name="orange_wins">Orange wins!</string>
+    <string name="blue_wins">Blue wins!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next">next</string>
+    <string name="how_to_play">How To Play</string>
+
+</resources>
